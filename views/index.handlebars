@@ -1,0 +1,53 @@
+<div class="row">
+    <div class="col l4">
+        <div class="card">
+        <div class="card-content">
+         <span class="card-title">Burgerrific Burgers</span>
+           <ul>
+                {{#each burgers}}
+                       {{#unless devoured}}
+                        <li>
+                            <span style="margin-right: 1rem;">{{burger_name}}</span><br><a href="/{{id}}" class="btn ">Devour</a>
+                            <a href="/delete/{{id}}" class="btn ">Delete</a><br>
+                        </li>
+                        {{/unless}}
+                {{/each}}
+           </ul>
+            
+        </div>
+      </div>
+    </div>
+    <div class="col l4">
+        <div class="card">
+        <div class="card-content">
+         <span class="card-title">Card Title</span>
+           <form action="\" method="POST">
+                <div class="row">
+                    <div class="input-field col s12">
+                      <input id="addBurgers" type="text" class="validate" name="burgerName">
+                      <label for="addBurgers">Burger Name</label>
+                    </div>
+                </div>
+                <button class="btn" type="submit">Add Burger!</button>   
+           </form>
+            
+        </div>
+      </div>    
+    </div>
+    <div class="col l4">
+        <div class="card">
+        <div class="card-content">
+         <span class="card-title">Devoured burgers</span>
+            <ul>
+               {{#each burgers}}
+                    {{#if devoured}}
+                        <li>
+                            <p>{{burger_name}}</p>
+                        </li>
+                    {{/if}}
+                {{/each}}
+           </ul>
+        </div>
+      </div>    
+    </div>
+</div>
